@@ -6,6 +6,13 @@
 # use or distribution is an offensive act against international law and may
 # be prosecuted under federal law. Its content is company confidential.
 #==============================================================================
+"""Chapter
+=======
+
+The chapter module tries to detect or analyse the meaning of a chapter.
+A main point is to find that requested features are given.
+"""
+
 import os
 
 __version__ = '0.0.0'
