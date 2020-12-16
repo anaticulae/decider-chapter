@@ -7,11 +7,6 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import power
 
-import chapter
-
-pytest_plugins = ['pytester', 'xdist']  # pylint: disable=invalid-name
-
-PACKAGE = chapter.PROCESS
-power.setup(chapter.ROOT)
+def work(words: str, headlines: str) -> str:  # pylint:disable=W0613
+    return ''

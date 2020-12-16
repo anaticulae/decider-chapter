@@ -7,11 +7,15 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import power
+import utila
 
 import chapter
+import tests.chapter
 
-pytest_plugins = ['pytester', 'xdist']  # pylint: disable=invalid-name
 
-PACKAGE = chapter.PROCESS
-power.setup(chapter.ROOT)
+def test_chapter_cli_help(monkeypatch):
+    tests.chapter.run('--help', monkeypatch=monkeypatch)
+
+
+def test_chapter_nomonkey_cli_help():
+    utila.run(f'{chapter.PROCESS} --help')

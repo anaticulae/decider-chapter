@@ -7,11 +7,25 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import power
+import functools
+
+import utila
+import utilatest
 
 import chapter
+import chapter.cli
 
-pytest_plugins = ['pytester', 'xdist']  # pylint: disable=invalid-name
+#pylint:disable=C0103
+run = functools.partial(
+    utilatest.run_command,
+    main=chapter.cli.main,
+    process=chapter.PROCESS,
+    success=True,
+)
 
-PACKAGE = chapter.PROCESS
-power.setup(chapter.ROOT)
+fail = functools.partial(
+    utilatest.run_command,
+    main=chapter.cli.main,
+    process=chapter.PROCESS,
+    success=False,
+)
