@@ -9,12 +9,20 @@
 
 import serializeraw
 
+import chapter.intro.decide
 import chapter.intro.section
+import chapter.serialize
 
 
 def work(words: str, headlines: str, sections: str, pages: tuple = None) -> str:  # pylint:disable=W0613
+    # load data
     headlines = serializeraw.load_headlines(headlines, pages=pages)
     words = serializeraw.load_text(words, headlines=headlines, pages=pages)
     sections = serializeraw.load_sections(sections, pages=pages)
-    chapter.intro.section.content(words, sections)
-    return ''
+    # run algo
+    content, firstchapter = chapter.intro.section.content(words, sections)
+    found = chapter.intro.decide.run(content)
+    intro = chapter.intro.decide.judge(found, firstchapter)
+    # dump
+    dumped = chapter.serialize.dump_chapter_introinfo(intro)
+    return dumped

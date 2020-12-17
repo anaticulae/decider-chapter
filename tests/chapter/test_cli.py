@@ -24,5 +24,15 @@ def test_chapter_nomonkey_cli_help():
 
 def test_chapter_master72(testdir, monkeypatch):
     source = power.link(power.MASTER072_PDF)
-    print(f'-i {source}')
     tests.chapter.run(f'-i {source}', monkeypatch=monkeypatch)
+
+
+def test_chapter_serialize(testdir, monkeypatch):
+    source = power.link(power.MASTER072_PDF)
+    tests.chapter.run(f'-i {source}', monkeypatch=monkeypatch)
+
+    intro = chapter.path.chapter_intro(testdir.tmpdir)
+    loaded = chapter.serialize.load_chapter_introinfo(intro)
+    dumped = chapter.serialize.dump_chapter_introinfo(loaded)
+    raw = utila.file_read(intro)
+    assert dumped == raw

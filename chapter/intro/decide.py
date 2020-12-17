@@ -10,6 +10,24 @@
 import german
 
 import chapter.intro.data
+import chapter.serialize
+
+FIELDS = 'start', 'goal', 'method', 'limit', 'structure'
+
+
+def judge(lines, ranges) -> chapter.serialize.ChapterIntroInfo:
+    result = chapter.serialize.ChapterIntroInfo(
+        pagestart=ranges[0],
+        pageend=ranges[1],
+    )
+    for index, line in enumerate(lines):
+        if not line:
+            continue
+        for ind, name in enumerate(FIELDS):
+            if not line[ind]:
+                continue
+            getattr(result, name).append((index, line[ind]))
+    return result
 
 
 def run(sentences: list) -> list:
@@ -26,9 +44,7 @@ def run(sentences: list) -> list:
         if max(detected) == 0:
             result.append(None)
             continue
-        maxindex = detected.index(max(detected))
-        maxed = chapter.intro.data.TODO[maxindex][0]
-        result.append(maxed)
+        result.append(detected)
     return result
 
 

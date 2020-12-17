@@ -15,6 +15,8 @@ A main point is to find that requested features are given.
 
 import os
 
+import chapter.path
+
 __version__ = '0.0.0'
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))

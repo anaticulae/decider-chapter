@@ -7,16 +7,8 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import chapter.intro.data
-import chapter.intro.decide
-import chapter.intro.section
+import utila
 
 
-def test_intro_decide(master72):
-    sentences, firstchapter = chapter.intro.section.content(*master72)
-    decided = chapter.intro.decide.run(sentences)
-    assert len(decided) == 44
-    result = chapter.intro.decide.judge(decided, firstchapter)
-    assert result.pagestart == 3
-    assert result.pageend == 6
-    assert len(result.structure) == 7
+def chapter_intro(path: str, prefix: str = '') -> str:
+    return utila.pathconnector(path, 'chapter', 'intro_intro', prefix)
