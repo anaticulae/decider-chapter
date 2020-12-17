@@ -7,6 +7,7 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
+import power
 import utila
 
 import chapter
@@ -19,3 +20,9 @@ def test_chapter_cli_help(monkeypatch):
 
 def test_chapter_nomonkey_cli_help():
     utila.run(f'{chapter.PROCESS} --help')
+
+
+def test_chapter_master72(testdir, monkeypatch):
+    source = power.link(power.MASTER072_PDF)
+    print(f'-i {source}')
+    tests.chapter.run(f'-i {source}', monkeypatch=monkeypatch)

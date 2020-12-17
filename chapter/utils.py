@@ -36,3 +36,8 @@ def select_chapter(sections, chapternumber: int = 0):
     with contextlib.suppress(IndexError):
         return chapters[chapternumber], chapters[chapternumber + 1]
     return None
+
+
+def init(text: str) -> set:
+    """Prepare sentence search data."""
+    return {item.lower() for item in text.splitlines() if item}
