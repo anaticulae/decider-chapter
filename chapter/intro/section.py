@@ -26,4 +26,4 @@ def content(words, sections):
         for section in page.content:
             result.append(section.headline)
             result.extend(section.content)
-    return result
+    return result, firstchapter

@@ -15,7 +15,7 @@ import chapter.intro.section
 
 
 def test_intro_decide(master72):
-    sentences = chapter.intro.section.content(*master72)
+    sentences, _ = chapter.intro.section.content(*master72)
     decided = chapter.intro.decide.run(sentences)
     assert len(decided) == 44
     decided = sorted(utila.notnone(utila.make_unique(decided)))
