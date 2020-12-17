@@ -7,10 +7,10 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import chapter.intro.section
+import chapter.utils
 
 
 def test_intro_content(master72):
     text, sections = master72
-    sentences, _ = chapter.intro.section.content(text, sections)
+    sentences, _ = chapter.utils.content(text, sections)
     assert len(sentences) == 44  # TODO: NOT VALIDATED YET

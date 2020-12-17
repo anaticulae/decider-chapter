@@ -10,7 +10,6 @@
 import serializeraw
 
 import chapter.intro.decide
-import chapter.intro.section
 import chapter.serialize
 
 
@@ -20,7 +19,7 @@ def work(words: str, headlines: str, sections: str, pages: tuple = None) -> str:
     words = serializeraw.load_text(words, headlines=headlines, pages=pages)
     sections = serializeraw.load_sections(sections, pages=pages)
     # run algo
-    content, firstchapter = chapter.intro.section.content(words, sections)
+    content, firstchapter = chapter.utils.content(words, sections)
     found = chapter.intro.decide.run(content)
     intro = chapter.intro.decide.judge(found, firstchapter)
     # dump

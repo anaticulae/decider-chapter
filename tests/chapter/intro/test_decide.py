@@ -9,11 +9,10 @@
 
 import chapter.intro.data
 import chapter.intro.decide
-import chapter.intro.section
 
 
 def test_intro_decide(master72):
-    sentences, firstchapter = chapter.intro.section.content(*master72)
+    sentences, firstchapter = chapter.utils.content(*master72)
     decided = chapter.intro.decide.run(sentences)
     assert len(decided) == 44
     result = chapter.intro.decide.judge(decided, firstchapter)

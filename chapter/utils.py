@@ -10,6 +10,7 @@
 import contextlib
 
 import iamraw
+import utila
 
 
 def mainpart(sections):
@@ -36,6 +37,23 @@ def select_chapter(sections, chapternumber: int = 0):
     with contextlib.suppress(IndexError):
         return chapters[chapternumber], chapters[chapternumber + 1]
     return None
+
+
+def content(words, sections):
+    firstchapter = select_chapter(sections, chapternumber=0)
+    if firstchapter is None:
+        return None
+    start, end = firstchapter
+    selected = [
+        utila.select_page(words, page)
+        for page in utila.ranged_tuple(start, end)
+    ]
+    result = []
+    for page in selected:
+        for section in page.content:
+            result.append(section.headline)
+            result.extend(section.content)
+    return result, firstchapter
 
 
 def init(text: str) -> set:
