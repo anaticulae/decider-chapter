@@ -13,7 +13,7 @@ import chapter.intro.decide
 import chapter.serialize
 
 
-def work(words: str, headlines: str, sections: str, pages: tuple = None) -> str:  # pylint:disable=W0613
+def work(words: str, headlines: str, sections: str, pages: tuple = None) -> str:
     # load data
     headlines = serializeraw.load_headlines(headlines, pages=pages)
     words = serializeraw.load_text(words, headlines=headlines, pages=pages)
