@@ -6,15 +6,3 @@
 # use or distribution is an offensive act against international law and may
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
-
-import serializeraw
-
-import chapter.intro.section
-
-
-def work(words: str, headlines: str, sections: str, pages: tuple = None) -> str:  # pylint:disable=W0613
-    headlines = serializeraw.load_headlines(headlines, pages=pages)
-    words = serializeraw.load_text(words, headlines=headlines, pages=pages)
-    sections = serializeraw.load_sections(sections, pages=pages)
-    chapter.intro.section.content(words, sections)
-    return ''

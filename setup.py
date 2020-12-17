@@ -51,6 +51,7 @@ if __name__ == "__main__":
         packages=[
             'chapter',
             'chapter.features',
+            'chapter.intro',
         ],
         entry_points={
             'console_scripts': [

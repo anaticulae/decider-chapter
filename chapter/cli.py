@@ -19,6 +19,7 @@ WORKPLAN = [
         inputs=[
             utila.ResultFile('words', 'word_result'),
             utila.ResultFile('words', 'headlines_headlines'),
+            utila.ResultFile('sections', 'section_result'),
         ],
         output=('intro',),
     ),
@@ -35,7 +36,6 @@ def main():
             multiprocessed=True,
             name=chapter.PROCESS,
             pages=True,
-            singleinput=False,  # require result folder, ignore single pdf file
             version=chapter.__version__,
         ),
     )

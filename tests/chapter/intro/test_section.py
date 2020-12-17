@@ -7,14 +7,10 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import serializeraw
-
 import chapter.intro.section
 
 
-def work(words: str, headlines: str, sections: str, pages: tuple = None) -> str:  # pylint:disable=W0613
-    headlines = serializeraw.load_headlines(headlines, pages=pages)
-    words = serializeraw.load_text(words, headlines=headlines, pages=pages)
-    sections = serializeraw.load_sections(sections, pages=pages)
-    chapter.intro.section.content(words, sections)
-    return ''
+def test_intro_content(master72):
+    text, sections = master72
+    sentences = chapter.intro.section.content(text, sections)
+    assert len(sentences) == 44  # TODO: NOT VALIDATED YET

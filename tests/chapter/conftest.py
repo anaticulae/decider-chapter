@@ -7,14 +7,22 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
+import iamraw
+import power
+import pytest
 import serializeraw
+import words.path
 
-import chapter.intro.section
 
-
-def work(words: str, headlines: str, sections: str, pages: tuple = None) -> str:  # pylint:disable=W0613
-    headlines = serializeraw.load_headlines(headlines, pages=pages)
-    words = serializeraw.load_text(words, headlines=headlines, pages=pages)
-    sections = serializeraw.load_sections(sections, pages=pages)
-    chapter.intro.section.content(words, sections)
-    return ''
+@pytest.fixture
+def master72():
+    source = power.link(power.MASTER072_PDF)
+    # determine path
+    headlines = words.path.headlines(source)
+    text = words.path.word(source)
+    sections = iamraw.path.sections_(source)
+    # load data
+    headlines = serializeraw.load_headlines(headlines)
+    text = serializeraw.load_text(text, headlines=headlines)
+    sections = serializeraw.load_sections(sections)
+    return text, sections

@@ -7,14 +7,23 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import serializeraw
+import utila
 
-import chapter.intro.section
+import chapter.utils
 
 
-def work(words: str, headlines: str, sections: str, pages: tuple = None) -> str:  # pylint:disable=W0613
-    headlines = serializeraw.load_headlines(headlines, pages=pages)
-    words = serializeraw.load_text(words, headlines=headlines, pages=pages)
-    sections = serializeraw.load_sections(sections, pages=pages)
-    chapter.intro.section.content(words, sections)
-    return ''
+def content(words, sections):
+    firstchapter = chapter.utils.select_chapter(sections, chapternumber=0)
+    if firstchapter is None:
+        return None
+    start, end = firstchapter
+    selected = [
+        utila.select_page(words, page)
+        for page in utila.ranged_tuple(start, end)
+    ]
+    result = []
+    for page in selected:
+        for section in page.content:
+            result.append(section.headline)
+            result.extend(section.content)
+    return result
