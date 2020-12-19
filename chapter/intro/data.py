@@ -36,6 +36,7 @@ gegenwärtig weite Kreise
 haben gut
 kaum noch wegzudenken
 sondern deuten auch an
+spielt im
 ziehen sie gegenwärtig weite Kreise
 """
 START = chapter.utils.init(START)
@@ -43,20 +44,46 @@ START = chapter.utils.init(START)
 GOAL = """\
 Arbeit leiten wird
 Der Schwerpunkt
+Forschungsfragen
 Fragestellung und Zielsetzung
+Welche
+Welche Aspekte
+Wie gestaltet
+Wie oft
 Zentraler Bestandteil
+Ziel
 Ziel der folgenden Ausführungen
+Ziel dieser Arbeit
+folgende Forschungsfragen
 wenig erforschtes Gebiet
 zentrale Fragestellung
+zu entwerfen
+zu identifizieren
+zu implementieren
 """
 GOAL = chapter.utils.init(GOAL)
 
 METHOD = """\
+Auswahlkriterium zur Stichprobenkonstruktion
 Bearbeitung dieser Leitfrage
+Hierfür wurde abgefragt
+Im Zuge
+Quotenauswahl
+Stichprobe
+Stichprobenart
+Stichprobenumfang
+Untersuchungsgebiete
+demographischen Merkmalen
 den Ansätzen
 funktionalen Zugang
+modular und leicht erweiterbar
+repräsentative, standardisierte Kundenbefragung
+soll anhand
+sozioökonomische Daten
+standardisierten Fragebogens
 theoretische Strömungen
 theoretischen Ansätze werden
+verschiedenen Gruppen
 zueinander in Beziehung gesetzt
 """
 METHOD = chapter.utils.init(METHOD)
@@ -65,20 +92,31 @@ LIMIT = """\
 Arbeit nicht durchgeführt werden
 Literatur bisher kaum verfolgt
 Selten wird
+Zeitrahmen
 bewusst keinen Beitrag
+festgestellt werden
 kaum Ansätze zu finden
+nicht möglich sein wird
 sondern legt den Fokus
 """
 LIMIT = chapter.utils.init(LIMIT)
 
 STRUCTURE = """\
 Aufbau der Arbeit
+Kapitel 1
+Kapitel 2
+Kapitel 3
+Kapitel 4
+Kapitel 5
+beschreibt den
 des vierten Teils
 dritten Kapitel
 erste Kapitel
 fünfte Kapitel
+gibt eine Einführung
 gliedert sich in
 in fünf Teile
+stellt die wichtigsten
 vierte Kapitel
 werden Begriffe und Überlegungen
 zweite Kapitel
