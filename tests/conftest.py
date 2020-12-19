@@ -21,6 +21,8 @@ power.setup(chapter.ROOT)
 
 RESOURCES = [
     (power.MASTER072_PDF, '0:10'),
+    (power.MASTER075_PDF, '0:15'),
+    (power.MASTER078_PDF, '0:15'),
 ]
 
 WORKER = 6
