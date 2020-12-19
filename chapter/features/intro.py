@@ -19,9 +19,14 @@ def work(words: str, headlines: str, sections: str, pages: tuple = None) -> str:
     words = serializeraw.load_text(words, headlines=headlines, pages=pages)
     sections = serializeraw.load_sections(sections, pages=pages)
     # run algo
-    content, firstchapter = chapter.utils.content(words, sections)
-    found = chapter.intro.decide.run(content)
-    intro = chapter.intro.decide.judge(found, firstchapter)
+    detected = chapter.utils.content(words, sections)
+    if not detected:
+        # could not detect firstchapter, content
+        intro = chapter.serialize.ChapterIntroInfo()
+    else:
+        content, firstchapter = detected
+        found = chapter.intro.decide.run(content)
+        intro = chapter.intro.decide.judge(found, firstchapter)
     # dump
     dumped = chapter.serialize.dump_chapter_introinfo(intro)
     return dumped
