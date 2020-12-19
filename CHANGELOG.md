@@ -2,6 +2,12 @@
 
 Every noteable change is logged here.
 
+## v0.1.1
+
+### Feature
+
+* extend intro detector (c652b67fa588)
+
 ## v0.1.0
 
 ### Feature
