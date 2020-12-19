@@ -2,6 +2,12 @@
 
 Every noteable change is logged here.
 
+## v0.1.3
+
+### Fix
+
+* could not detect intro (8d8fdae4d123)
+
 ## v0.1.2
 
 ### Fix
