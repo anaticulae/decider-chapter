@@ -50,6 +50,9 @@ def content(words, sections):
     ]
     result = []
     for page in selected:
+        if not page:
+            # empty page?
+            continue
         for section in page.content:
             result.append(section.headline)
             result.extend(section.content)
