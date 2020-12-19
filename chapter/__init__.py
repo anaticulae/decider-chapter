@@ -17,7 +17,7 @@ import os
 
 import chapter.path
 
-__version__ = '0.1.1'
+__version__ = '0.1.2'
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 PROCESS = 'chapter'
