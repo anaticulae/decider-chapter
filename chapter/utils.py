@@ -57,8 +57,3 @@ def content(words, sections):
             result.append(section.headline)
             result.extend(section.content)
     return result, firstchapter
-
-
-def init(text: str) -> set:
-    """Prepare sentence search data."""
-    return {item.lower() for item in text.splitlines() if item}

@@ -9,7 +9,7 @@
 
 import enum
 
-import chapter.utils
+import utila
 
 
 class IntroType(enum.IntEnum):
@@ -25,7 +25,7 @@ class IntroType(enum.IntEnum):
     STRUCTURE = enum.auto()
 
 
-START = """\
+START = utila.splitlines("""\
 Circa
 Ein Beispiel dafür
 Einleitung
@@ -38,10 +38,9 @@ kaum noch wegzudenken
 sondern deuten auch an
 spielt im
 ziehen sie gegenwärtig weite Kreise
-"""
-START = chapter.utils.init(START)
+""")
 
-GOAL = """\
+GOAL = utila.splitlines("""\
 Arbeit leiten wird
 Der Schwerpunkt
 Forschungsfragen
@@ -60,10 +59,9 @@ zentrale Fragestellung
 zu entwerfen
 zu identifizieren
 zu implementieren
-"""
-GOAL = chapter.utils.init(GOAL)
+""")
 
-METHOD = """\
+METHOD = utila.splitlines("""\
 Auswahlkriterium zur Stichprobenkonstruktion
 Bearbeitung dieser Leitfrage
 Hierfür wurde abgefragt
@@ -85,10 +83,9 @@ theoretische Strömungen
 theoretischen Ansätze werden
 verschiedenen Gruppen
 zueinander in Beziehung gesetzt
-"""
-METHOD = chapter.utils.init(METHOD)
+""")
 
-LIMIT = """\
+LIMIT = utila.splitlines("""\
 Arbeit nicht durchgeführt werden
 Literatur bisher kaum verfolgt
 Selten wird
@@ -98,10 +95,9 @@ festgestellt werden
 kaum Ansätze zu finden
 nicht möglich sein wird
 sondern legt den Fokus
-"""
-LIMIT = chapter.utils.init(LIMIT)
+""")
 
-STRUCTURE = """\
+STRUCTURE = utila.splitlines("""\
 Aufbau der Arbeit
 Kapitel 1
 Kapitel 2
@@ -121,8 +117,7 @@ vierte Kapitel
 werden Begriffe und Überlegungen
 zweite Kapitel
 zweiten Teil
-"""
-STRUCTURE = chapter.utils.init(STRUCTURE)
+""")
 
 TODO = [
     (IntroType.START, START),
