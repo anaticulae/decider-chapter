@@ -12,7 +12,7 @@ import german
 import chapter.intro.data
 import chapter.serialize
 
-FIELDS = 'start', 'goal', 'method', 'limit', 'structure'
+FIELDS = 'start goal method limit structure'.split()
 
 
 def judge(lines, ranges) -> chapter.serialize.ChapterIntroInfo:
