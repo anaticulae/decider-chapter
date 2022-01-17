@@ -41,7 +41,7 @@ def run(sentences: list) -> list:
                 result.append(None)
                 continue
         detected = analyse(sentence)
-        if max(detected) == 0:
+        if not any(detected):
             result.append(None)
             continue
         result.append(detected)
