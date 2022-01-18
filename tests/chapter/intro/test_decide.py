@@ -9,6 +9,7 @@
 
 import chapter.intro.data
 import chapter.intro.decide
+import chapter.utils
 
 
 def test_intro_decide(master72):

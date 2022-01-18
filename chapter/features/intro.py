@@ -11,6 +11,7 @@ import serializeraw
 
 import chapter.intro.decide
 import chapter.serialize
+import chapter.utils
 
 
 def work(words: str, headlines: str, sections: str, pages: tuple = None) -> str:
