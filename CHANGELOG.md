@@ -2,6 +2,12 @@
 
 Every noteable change is logged here.
 
+## v0.1.7
+
+### Fix
+
+* organize imports (638a6d35d2ed)
+
 ## v0.1.6
 
 ### Documentation
