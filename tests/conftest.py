@@ -38,9 +38,9 @@ def extract(resources):
         destination=power.generated(),
         base=power.REPOSITORY,
         groupme=True,
+        headlines=True,
         sections=True,
         words=True,
-        magic=True,
         worker=WORKER,
         pages=':',
     )
