@@ -12,7 +12,8 @@ Progress
   changelog
 
 Modules
---------------------
+-------
+
 .. toctree::
    :maxdepth: 4
 
