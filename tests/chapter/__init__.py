@@ -7,25 +7,8 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import functools
-
-import utila
 import utilatest
 
 import chapter
-import chapter.cli
 
-#pylint:disable=C0103
-run = functools.partial(
-    utilatest.run_command,
-    main=chapter.cli.main,
-    process=chapter.PROCESS,
-    success=True,
-)
-
-fail = functools.partial(
-    utilatest.run_command,
-    main=chapter.cli.main,
-    process=chapter.PROCESS,
-    success=False,
-)
+run, fail = utilatest.create_cli_runner(chapter)
