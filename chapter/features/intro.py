@@ -14,13 +14,22 @@ import chapter.serialize
 import chapter.utils
 
 
-def work(words: str, headlines: str, sections: str, pages: tuple = None) -> str:
+def work(
+    sentences: str,
+    headlines: str,
+    sections: str,
+    pages: tuple = None,
+) -> str:
     # load data
     headlines = serializeraw.load_headlines(headlines, pages=pages)
-    words = serializeraw.load_text(words, headlines=headlines, pages=pages)
+    sentences = serializeraw.load_text(
+        sentences,
+        headlines=headlines,
+        pages=pages,
+    )
     sections = serializeraw.load_sections(sections, pages=pages)
     # run algo
-    detected = chapter.utils.content(words, sections)
+    detected = chapter.utils.content(sentences, sections)
     if not detected:
         # could not detect firstchapter, content
         intro = chapter.serialize.ChapterIntroInfo()

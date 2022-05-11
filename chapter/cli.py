@@ -17,8 +17,8 @@ WORKPLAN = [
     utila.create_step(
         'intro',
         inputs=[
-            utila.ResultFile('words', 'word_result'),
-            utila.ResultFile('words', 'headlines_headlines'),
+            utila.ResultFile('words', 'sentences_sentences'),
+            utila.ResultFile('headlines', 'result_result'),
             utila.ResultFile('sections', 'section_result'),
         ],
         output=('intro',),
