@@ -52,4 +52,3 @@ Every noteable change is logged here.
 * add main purpose of chapter module (c1cfcb303c70)
 
 ## v0.0.0 Initial release
-
