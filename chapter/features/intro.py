@@ -28,6 +28,13 @@ def work(
         pages=pages,
     )
     sections = serializeraw.load_sections(sections, pages=pages)
+    intro = run_intro(sentences, sections)
+    # dump
+    dumped = chapter.serialize.dump_chapter_introinfo(intro)
+    return dumped
+
+
+def run_intro(sentences, sections):
     # run algo
     detected = chapter.utils.firstchapter(
         sentences,
@@ -35,11 +42,8 @@ def work(
     )
     if not detected:
         # could not detect firstchapter, content
-        intro = chapter.serialize.ChapterIntroInfo()
-    else:
-        content, firstchapter = detected
-        found = chapter.intro.decide.run(content)
-        intro = chapter.intro.decide.judge(found, firstchapter)
-    # dump
-    dumped = chapter.serialize.dump_chapter_introinfo(intro)
-    return dumped
+        return chapter.serialize.ChapterIntroInfo()
+    content, firstchapter = detected
+    found = chapter.intro.decide.run(content)
+    result = chapter.intro.decide.judge(found, firstchapter)
+    return result
