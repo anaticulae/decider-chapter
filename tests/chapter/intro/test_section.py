@@ -12,5 +12,5 @@ import chapter.utils
 
 def test_intro_content(master72):
     text, sections = master72
-    sentences, _ = chapter.utils.content(text, sections)
+    sentences, _ = chapter.utils.firstchapter(text, sections)
     assert len(sentences) == 44  # TODO: NOT VALIDATED YET

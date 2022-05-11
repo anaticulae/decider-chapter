@@ -13,7 +13,7 @@ import chapter.utils
 
 
 def test_intro_decide(master72):
-    sentences, firstchapter = chapter.utils.content(*master72)
+    sentences, firstchapter = chapter.utils.firstchapter(*master72)
     assert sentences
     decided = chapter.intro.decide.run(sentences)
     assert len(decided) == 44

@@ -29,7 +29,10 @@ def work(
     )
     sections = serializeraw.load_sections(sections, pages=pages)
     # run algo
-    detected = chapter.utils.content(sentences, sections)
+    detected = chapter.utils.firstchapter(
+        sentences,
+        sections,
+    )
     if not detected:
         # could not detect firstchapter, content
         intro = chapter.serialize.ChapterIntroInfo()

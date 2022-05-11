@@ -39,11 +39,14 @@ def select_chapter(sections, chapternumber: int = 0):
     return None
 
 
-def content(words, sections):
-    firstchapter = select_chapter(sections, chapternumber=0)
-    if firstchapter is None:
+def firstchapter(words, sections):
+    first = select_chapter(
+        sections,
+        chapternumber=0,
+    )
+    if first is None:
         return None
-    start, end = firstchapter
+    start, end = first
     selected = [
         utila.select_page(words, page)
         for page in utila.ranged_tuple(start, end)
@@ -56,4 +59,4 @@ def content(words, sections):
         for section in page.content:
             result.append(section.headline)
             result.extend(section.content)
-    return result, firstchapter
+    return result, first
