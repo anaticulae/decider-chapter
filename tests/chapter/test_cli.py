@@ -9,6 +9,7 @@
 
 import power
 import utila
+import utilatest
 
 import chapter
 import tests.chapter
@@ -22,11 +23,13 @@ def test_chapter_nomonkey_cli_help():
     utila.run(f'{chapter.PROCESS} --help')
 
 
+@utilatest.requires(power.MASTER072_PDF)
 def test_chapter_master72(testdir, monkeypatch):
     source = power.link(power.MASTER072_PDF)
     tests.chapter.run(f'-i {source}', monkeypatch=monkeypatch)
 
 
+@utilatest.requires(power.MASTER072_PDF)
 def test_chapter_serialize(testdir, monkeypatch):
     source = power.link(power.MASTER072_PDF)
     tests.chapter.run(f'-i {source}', monkeypatch=monkeypatch)

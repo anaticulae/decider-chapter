@@ -11,11 +11,14 @@ import iamraw
 import power
 import pytest
 import serializeraw
+import utilatest
+
 import words.path
 
 
 @pytest.fixture
 def master72():
+    utilatest.fixture_requires(power.MASTER072_PDF)
     source = power.link(power.MASTER072_PDF)
     # determine path
     headlines = words.path.headlines(source)

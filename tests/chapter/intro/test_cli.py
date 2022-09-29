@@ -9,6 +9,7 @@
 
 import power
 import pytest
+import utilatest
 
 import chapter.path
 import chapter.serialize
@@ -16,6 +17,7 @@ import tests.chapter
 
 
 def detect_intro(source, testdir, monkeypatch):
+    utilatest.fixture_requires(source)
     source = power.link(source)
     tests.chapter.run(f'-i {source} --intro', monkeypatch=monkeypatch)
     # load data
@@ -28,6 +30,7 @@ def detect_intro(source, testdir, monkeypatch):
     pytest.param(power.MASTER078_PDF, id='master78'),
 ])
 def test_chapter_intro_x_complete(source, testdir, monkeypatch):
+    utilatest.fixture_requires(source)
     loaded = detect_intro(source, testdir, monkeypatch)
     # verify
     assert loaded.goal
