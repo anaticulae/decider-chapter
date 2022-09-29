@@ -16,12 +16,11 @@ import chapter.serialize
 import tests.chapter
 
 
-def detect_intro(source, testdir, monkeypatch):
-    utilatest.fixture_requires(source)
+def detect_intro(source, td, mp):
     source = power.link(source)
-    tests.chapter.run(f'-i {source} --intro', monkeypatch=monkeypatch)
+    tests.chapter.run(f'-i {source} --intro', mp=mp)
     # load data
-    path = chapter.path.chapter_intro(testdir.tmpdir)
+    path = chapter.path.chapter_intro(td.tmpdir)
     loaded = chapter.serialize.load_chapter_introinfo(path)
     return loaded
 
@@ -43,8 +42,8 @@ def test_chapter_intro_x_complete(source, testdir, monkeypatch):
 @pytest.mark.parametrize('source', [
     pytest.param(power.MASTER075_PDF, id='master75', marks=pytest.mark.xfail),
 ])
-def test_chapter_intro_x_missing(source, testdir, monkeypatch):
-    loaded = detect_intro(source, testdir, monkeypatch)
+def test_chapter_intro_x_missing(source, td, mp):
+    loaded = detect_intro(source, td, mp)
     # verify
     assert loaded.goal
     assert loaded.method

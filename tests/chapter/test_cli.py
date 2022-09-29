@@ -15,8 +15,8 @@ import chapter
 import tests.chapter
 
 
-def test_chapter_cli_help(monkeypatch):
-    tests.chapter.run('--help', monkeypatch=monkeypatch)
+def test_chapter_cli_help(mp):
+    tests.chapter.run('--help', mp=mp)
 
 
 def test_chapter_nomonkey_cli_help():
@@ -24,17 +24,17 @@ def test_chapter_nomonkey_cli_help():
 
 
 @utilatest.requires(power.MASTER072_PDF)
-def test_chapter_master72(testdir, monkeypatch):
+def test_chapter_master72(td, mp):  # pylint:disable=W0613
     source = power.link(power.MASTER072_PDF)
-    tests.chapter.run(f'-i {source}', monkeypatch=monkeypatch)
+    tests.chapter.run(f'-i {source}', mp=mp)
 
 
 @utilatest.requires(power.MASTER072_PDF)
-def test_chapter_serialize(testdir, monkeypatch):
+def test_chapter_serialize(td, mp):
     source = power.link(power.MASTER072_PDF)
-    tests.chapter.run(f'-i {source}', monkeypatch=monkeypatch)
+    tests.chapter.run(f'-i {source}', mp=mp)
 
-    intro = chapter.path.chapter_intro(testdir.tmpdir)
+    intro = chapter.path.chapter_intro(td.tmpdir)
     loaded = chapter.serialize.load_chapter_introinfo(intro)
     dumped = chapter.serialize.dump_chapter_introinfo(loaded)
     raw = utila.file_read(intro)
