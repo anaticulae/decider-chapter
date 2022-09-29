@@ -37,8 +37,12 @@ def pytest_sessionstart():
 def extract(resources):
     genex.extract(
         files=resources,
+        footnote=True,
         groupme=True,
         headlines=True,
+        headnote=True,
+        lists=True,
+        pagenumber=True,
         sections=True,
         words=True,
         worker=WORKER,
