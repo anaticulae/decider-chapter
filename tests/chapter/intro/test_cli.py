@@ -40,7 +40,7 @@ def test_chapter_intro_x_complete(source, testdir, monkeypatch):
 
 
 @pytest.mark.parametrize('source', [
-    pytest.param(power.MASTER075_PDF, id='master75', marks=pytest.mark.xfail),
+    pytest.param(power.MASTER075_PDF, id='master75'),
 ])
 def test_chapter_intro_x_missing(source, td, mp):
     loaded = detect_intro(source, td, mp)
