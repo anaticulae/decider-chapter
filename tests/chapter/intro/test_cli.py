@@ -29,8 +29,8 @@ def detect_intro(source, td, mp):
 @pytest.mark.parametrize('source', [
     pytest.param(power.MASTER078_PDF, id='master78'),
 ])
-def test_chapter_intro_x_complete(source, testdir, monkeypatch):
-    loaded = detect_intro(source, testdir, monkeypatch)
+def test_chapter_intro_x_complete(source, td, mp):
+    loaded = detect_intro(source, td, mp)
     # verify
     assert loaded.goal
     assert loaded.limit

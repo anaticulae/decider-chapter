@@ -48,8 +48,7 @@ def firstchapter(words, sections):
         return None
     start, end = first
     selected = [
-        utila.select_page(words, page)
-        for page in utila.ranged_tuple(start, end)
+        utila.select_page(words, page) for page in utila.rtuple(start, end)
     ]
     result = []
     for page in selected:
