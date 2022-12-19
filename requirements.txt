@@ -7,9 +7,9 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-utila>=2.88.0<3.0.0
+utila>=2.99.1<3.0.0
 
 # texmex package
-iamraw>=4.83.0<5.0.0
+iamraw>=4.88.10<5.0.0
 
-german>=1.26.3<2.0.0
+german>=1.27.1<2.0.0
