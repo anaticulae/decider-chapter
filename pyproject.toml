@@ -35,8 +35,19 @@ content-type = "text/markdown"
 
 [project.optional-dependencies]
 dev = [
+    "capita==1.25.3",
+    "capita_ref==1.0.1",
     "gennex==1.1.0",
+    "groupmes==1.1.0",
+    "headnote==1.0.3",
     "hoverpower==1.7.0",
+    "ibidem==1.0.2",
+    "indicibus==1.0.2",
+    "pagenumber==1.0.0",
+    "rawmaker==2.40.5",
+    "reftable==1.0.0",
+    "tablero==1.0.1",
+    "titulum==1.0.2",
     "utilotest==1.1.1",
     "verbo==1.23.4",
 ]
