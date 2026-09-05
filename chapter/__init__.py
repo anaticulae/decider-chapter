@@ -13,11 +13,12 @@ The chapter module tries to detect or analyse the meaning of a chapter.
 A main point is to find that requested features are given.
 """
 
+import importlib.metadata
 import os
 
 import chapter.path
 
-__version__ = '0.2.1'
+__version__ = importlib.metadata.version('capitulum')
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 PROCESS = 'chapter'

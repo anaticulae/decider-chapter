@@ -12,7 +12,6 @@ import power
 import pytest
 import serializeraw
 import utilatest
-
 import words.path
 
 
