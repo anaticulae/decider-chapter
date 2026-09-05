@@ -7,7 +7,7 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import german
+import germania
 
 import chapter.intro.data
 import chapter.serialize
@@ -51,7 +51,7 @@ def run(sentences: list) -> list:
 def analyse(sentence: str) -> tuple:
     result = []
     for _, tokens in chapter.intro.data.TODO:
-        found = german.searches(
+        found = germania.searches(
             tokens,
             sentence=sentence,
         )

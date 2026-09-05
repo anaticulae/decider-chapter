@@ -10,7 +10,7 @@
 import contextlib
 
 import iamraw
-import utila
+import utilo
 
 
 def mainpart(sections):
@@ -48,7 +48,7 @@ def firstchapter(words, sections):
         return None
     start, end = first
     selected = [
-        utila.select_page(words, page) for page in utila.rtuple(start, end)
+        utilo.select_page(words, page) for page in utilo.rtuple(start, end)
     ]
     result = []
     for page in selected:

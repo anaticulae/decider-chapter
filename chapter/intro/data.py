@@ -9,7 +9,7 @@
 
 import enum
 
-import utila
+import utilo
 
 
 class IntroType(enum.IntEnum):
@@ -25,7 +25,7 @@ class IntroType(enum.IntEnum):
     STRUCTURE = enum.auto()
 
 
-START = utila.splitlines("""\
+START = utilo.splitlines("""\
 Circa
 Ein Beispiel dafür
 Einleitung
@@ -40,7 +40,7 @@ spielt im
 ziehen sie gegenwärtig weite Kreise
 """)
 
-GOAL = utila.splitlines("""\
+GOAL = utilo.splitlines("""\
 Arbeit leiten wird
 Der Schwerpunkt
 Forschungsfragen
@@ -61,7 +61,7 @@ zu identifizieren
 zu implementieren
 """)
 
-METHOD = utila.splitlines("""\
+METHOD = utilo.splitlines("""\
 Auswahlkriterium zur Stichprobenkonstruktion
 Bearbeitung dieser Leitfrage
 Hierfür wurde abgefragt
@@ -85,7 +85,7 @@ verschiedenen Gruppen
 zueinander in Beziehung gesetzt
 """)
 
-LIMIT = utila.splitlines("""\
+LIMIT = utilo.splitlines("""\
 Arbeit nicht durchgeführt werden
 Literatur bisher kaum verfolgt
 Selten wird
@@ -97,7 +97,7 @@ nicht möglich sein wird
 sondern legt den Fokus
 """)
 
-STRUCTURE = utila.splitlines("""\
+STRUCTURE = utilo.splitlines("""\
 Aufbau der Arbeit
 Kapitel 1
 Kapitel 2

@@ -7,23 +7,23 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import genex
-import power
+import gennex
+import hoverpower
 import pytest
-from utilatest import mp  # pylint:disable=W0611
-from utilatest import td  # pylint:disable=W0611
+from utilotest import mp  # pylint:disable=W0611
+from utilotest import td  # pylint:disable=W0611
 
 import chapter
 
 pytest_plugins = ['pytester', 'xdist']  # pylint: disable=invalid-name
 
 PACKAGE = chapter.PROCESS
-power.setup(chapter.ROOT)
+hoverpower.setup(chapter.ROOT)
 
 RESOURCES = [
-    (power.MASTER072_PDF, '0:20'),
-    (power.MASTER075_PDF, '0:15'),
-    (power.MASTER078_PDF, '0:15'),
+    (hoverpower.MASTER072_PDF, '0:20'),
+    (hoverpower.MASTER075_PDF, '0:15'),
+    (hoverpower.MASTER078_PDF, '0:15'),
 ]
 
 WORKER = 6
@@ -31,11 +31,11 @@ WORKER = 6
 
 @pytest.mark.usefixtures('session')
 def pytest_sessionstart():
-    power.run()
+    hoverpower.run()
 
 
 def extract(resources):
-    genex.extract(
+    gennex.extract(
         files=resources,
         footnote=True,
         groupme=True,

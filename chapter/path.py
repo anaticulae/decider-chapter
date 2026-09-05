@@ -7,8 +7,8 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import utila
+import utilo
 
 
 def chapter_intro(path: str, prefix: str = '') -> str:
-    return utila.pathconnector(path, 'chapter', 'intro_intro', prefix)
+    return utilo.pathconnector(path, 'chapter', 'intro_intro', prefix)

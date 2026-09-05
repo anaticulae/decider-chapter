@@ -7,9 +7,9 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import power
+import hoverpower
 import pytest
-import utilatest
+import utilotest
 
 import chapter.path
 import chapter.serialize
@@ -17,8 +17,8 @@ import tests.chapter
 
 
 def detect_intro(source, td, mp):
-    utilatest.fixture_requires(source)
-    source = power.link(source)
+    utilotest.fixture_requires(source)
+    source = hoverpower.link(source)
     tests.chapter.run(f'-i {source} --intro', mp=mp)
     # load data
     path = chapter.path.chapter_intro(td.tmpdir)
@@ -27,7 +27,7 @@ def detect_intro(source, td, mp):
 
 
 @pytest.mark.parametrize('source', [
-    pytest.param(power.MASTER078_PDF, id='master78'),
+    pytest.param(hoverpower.MASTER078_PDF, id='master78'),
 ])
 def test_chapter_intro_x_complete(source, td, mp):
     loaded = detect_intro(source, td, mp)
@@ -40,7 +40,7 @@ def test_chapter_intro_x_complete(source, td, mp):
 
 
 @pytest.mark.parametrize('source', [
-    pytest.param(power.MASTER075_PDF, id='master75'),
+    pytest.param(hoverpower.MASTER075_PDF, id='master75'),
 ])
 def test_chapter_intro_x_missing(source, td, mp):
     loaded = detect_intro(source, td, mp)

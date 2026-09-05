@@ -9,7 +9,7 @@
 
 import dataclasses
 
-import utila
+import utilo
 
 
 @dataclasses.dataclass
@@ -25,11 +25,11 @@ class ChapterIntroInfo:
 
 def dump_chapter_introinfo(intro: ChapterIntroInfo) -> str:
     raw = dataclasses.asdict(intro)
-    dumped = utila.yaml_dump(raw)
+    dumped = utilo.yaml_dump(raw)
     return dumped
 
 
 def load_chapter_introinfo(path: str) -> ChapterIntroInfo:
-    loaded = utila.yaml_load(path)
+    loaded = utilo.yaml_load(path)
     result = ChapterIntroInfo(**loaded)
     return result

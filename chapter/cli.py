@@ -7,19 +7,19 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import utila
+import utilo
 
 import chapter
 
 DESCRIPTION = ''
 
 WORKPLAN = [
-    utila.create_step(
+    utilo.create_step(
         'intro',
         inputs=[
-            utila.ResultFile('words', 'sentences_sentences'),
-            utila.ResultFile('headlines', 'result_result'),
-            utila.ResultFile('sections', 'section_result'),
+            utilo.ResultFile('words', 'sentences_sentences'),
+            utilo.ResultFile('headlines', 'result_result'),
+            utilo.ResultFile('sections', 'section_result'),
         ],
         output=('intro',),
     ),
@@ -27,11 +27,11 @@ WORKPLAN = [
 
 
 def main():
-    utila.featurepack(
+    utilo.featurepack(
         workplan=WORKPLAN,
         root=chapter.ROOT,
         featurepackage='chapter.features',
-        config=utila.FeaturePackConfig(
+        config=utilo.FeaturePackConfig(
             description=DESCRIPTION,
             multiprocessed=True,
             name=chapter.PROCESS,

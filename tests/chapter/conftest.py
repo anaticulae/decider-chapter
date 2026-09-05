@@ -7,18 +7,18 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
+import hoverpower
 import iamraw
-import power
 import pytest
 import serializeraw
-import utilatest
+import utilotest
 import words.path
 
 
 @pytest.fixture
 def master72():
-    utilatest.fixture_requires(power.MASTER072_PDF)
-    source = power.link(power.MASTER072_PDF)
+    utilotest.fixture_requires(hoverpower.MASTER072_PDF)
+    source = hoverpower.link(hoverpower.MASTER072_PDF)
     # determine path
     headlines = words.path.headlines(source)
     text = words.path.word(source)
