@@ -1,6 +1,14 @@
 # CHANGELOG
 
 
+## v1.0.1 (2026-09-06)
+
+### Bug Fixes
+
+- **pyproject**: Add backup cli name
+  ([`f7aab25`](https://github.com/anaticulae/decider-chapter/commit/f7aab25b3425b138e9ab7c9473765876637b5c58))
+
+
 ## v1.0.0 (2026-09-06)
 
 ### Chores
