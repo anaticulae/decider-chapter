@@ -6,7 +6,7 @@ requires = [
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "capitulum"
+name = "decider-chapter"
 version = "0.2.1"
 description = ""
 requires-python = ">=3.12"
