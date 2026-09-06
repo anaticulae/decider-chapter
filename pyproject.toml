@@ -53,7 +53,7 @@ dev = [
 ]
 
 [project.scripts]
-chapter = "chapter.cli:main"
+decider_chapter = "chapter.cli:main"
 
 [project.urls]
 Homepage = "https://github.com/anaticulae/iamraw"
